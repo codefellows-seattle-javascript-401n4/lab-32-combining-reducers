@@ -1,5 +1,7 @@
 401 JS --  Lab 32 Budget Tracker
 ===
+### David's Description
+
 
 ## Submission Instructions
   * continue working from lab 31
