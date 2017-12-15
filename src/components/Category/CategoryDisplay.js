@@ -10,7 +10,7 @@ class CategoryDisplay extends React.Component {
     }
     expenseDisplay = () => {
         return Object.keys(this.props.category.expenses).map(expense_key => {
-            return <ExpenseDisplay />;
+            return <ExpenseDisplay key={expense_key}/>;
         });
     }
 

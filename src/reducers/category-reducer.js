@@ -28,7 +28,14 @@ import initialState from '../lib/initialState';
           let toggleState = {...state};
           toggleState[action.id].updating = !toggleState[action.id].updating;
           return toggleState;
-       
+
+        case 'EXPENSE_CREATE':
+        let addExpense = {...state};
+
+        addExpense[action.expense.categoryID].expenses[action.expense.id] = action.expense;
+        return addExpense;
+
+
 
         default:
             return state;

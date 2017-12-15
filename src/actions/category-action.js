@@ -30,7 +30,8 @@ export const category_toggle = id => {
 
 export const expense_create = expense => {
     return {
-        type: 'EXPENSE_CREATE'
+        type: 'EXPENSE_CREATE',
+        expense
     }
 }
 

@@ -16,7 +16,7 @@ class ExpenseCreate extends React.Component {
 
     createExpense = (event) => {
         event.preventDefault();
-        this.props.createExpense();
+        this.props.createExpense(newExpense(this.state));
     }
 
     render() {
