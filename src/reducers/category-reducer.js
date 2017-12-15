@@ -1,32 +1,34 @@
 import initialState from '../lib/initialState';
   
   const categoryReducer = (state = initialState, action) => {
+
     switch(action.type) {
         case 'CATEGORY_CREATE':
+          let newState = {...state};
 
-        return [
-          ...state, action.category
-        ]
+          newState[action.category.id] = action.category;
+          return newState;
 
         case 'CATEGORY_UPDATE':
-        
-        return state.map(category => {
-           if (category.id === action.category.id) category.name = action.category.update;
-           return category;
-        });
+
+          let updateState = {...state};
+
+          updateState[action.content.id].name = action.content.text;
+          return updateState;
+
         
         case 'CATEGORY_DESTROY':
-        return state.filter((category) => {
-          if (category.id !== action.id) return category;
-        });
+          let thisState = {...state};
+
+          delete thisState[action.id];
+ 
+          return thisState;
 
         case 'CATEGORY_TOGGLE':
-        return state.map(category => {
-
-          if (category.id === action.id) category.updating = !category.updating;
-          console.log(category.updating);
-          return category;
-        });
+          let toggleState = {...state};
+          toggleState[action.id].updating = !toggleState[action.id].updating;
+          return toggleState;
+       
 
         default:
             return state;
