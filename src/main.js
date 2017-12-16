@@ -17,6 +17,3 @@ ReactDOM.render(
   </Provider>, 
 container);
 
-
-
-// 40:40

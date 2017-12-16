@@ -6,7 +6,7 @@ class CategoryItem extends React.Component{
     return(
       <div>
         <h2> {this.props.category.name} </h2>
-        <button onClick={() => this.props.categoryRemove(category)}> X </button>
+        <button onClick={() => this.props.categoryRemove(this.props.category)}> X </button>
         <CategoryForm category={this.props.category} onComplete={this.props.categoryUpdate} />
       </div>
 
