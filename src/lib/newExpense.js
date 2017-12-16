@@ -7,6 +7,7 @@ module.exports = ({expense, categoryID, cost}) => {
         expense: expense,
         cost: cost,
         categoryID:  categoryID,
-        timestamp: new Date()
+        timestamp: new Date(),
+        updating: false
     }
 }

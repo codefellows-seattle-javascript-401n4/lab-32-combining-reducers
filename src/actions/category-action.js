@@ -35,14 +35,24 @@ export const expense_create = expense => {
     }
 }
 
-export const expense_update = expense => {
+export const expense_update = (update) => {
     return {
-        type: 'EXPENSE_UPDATE'
+        type: 'EXPENSE_UPDATE',
+        update:update.updatedContent,
+        expense: update.expense
     }
 }
 
 export const expense_destroy = expense => {
     return {
-        type: 'EXPENSE_DESTROY'
+        type: 'EXPENSE_DESTROY',
+        expense
+    }
+}
+
+export const expense_toggle = expense => {
+    return {
+        type: 'EXPENSE_TOGGLE',
+        expense
     }
 }

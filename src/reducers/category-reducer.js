@@ -30,12 +30,30 @@ import initialState from '../lib/initialState';
           return toggleState;
 
         case 'EXPENSE_CREATE':
-        let addExpense = {...state};
+          let addExpense = {...state};
 
-        addExpense[action.expense.categoryID].expenses[action.expense.id] = action.expense;
-        return addExpense;
+          addExpense[action.expense.categoryID].expenses[action.expense.id] = action.expense;
+          return addExpense;
 
+        case 'EXPENSE_TOGGLE':
+          let toggleExpense = {...state};
 
+          toggleExpense[action.expense.categoryID].expenses[action.expense.id].updating = !toggleExpense[action.expense.categoryID].expenses[action.expense.id].updating;
+
+         return toggleExpense;
+
+         case 'EXPENSE_DESTROY':
+            let expenseDestroy = {...state};
+            delete expenseDestroy[action.expense.categoryID].expenses[action.expense.id];
+
+            return expenseDestroy;
+
+        case 'EXPENSE_UPDATE':
+            let expenseUpdate = {...state};
+
+           expenseUpdate[action.expense.categoryID].expenses[action.expense.id].expense = action.update;
+
+        return expenseUpdate;
 
         default:
             return state;

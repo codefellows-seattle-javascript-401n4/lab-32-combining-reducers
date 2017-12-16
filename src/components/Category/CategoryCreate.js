@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 // newCategory(name, budget)
-import newCategory from '../lib/newCategory';
+import newCategory from '../../lib/newCategory';
 
 class CategoryCreate extends React.Component {
     constructor(props) {

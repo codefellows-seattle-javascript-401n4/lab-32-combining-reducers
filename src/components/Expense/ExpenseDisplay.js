@@ -6,9 +6,25 @@ class ExpenseDisplay extends React.Component {
         super(props);
     }
 
+    toggle = () => {
+        this.props.actions.toggleExpenseUpdate(this.props.expense);
+    }
+
+    deleteThis = () => {
+        this.props.actions.deleteExpense(this.props.expense);
+    }
+
     render() {
         return (
-            <div>Expense</div>
+            <div>
+                Expense: {this.props.expense.expense}
+                <br />
+                Cost: {this.props.expense.cost}
+                <br />
+                <button onClick={this.toggle}>Update Expense</button>
+                <button onClick={this.deleteThis}>Delete Expense</button>
+                <br />
+            </div>
         )
     }
 }
