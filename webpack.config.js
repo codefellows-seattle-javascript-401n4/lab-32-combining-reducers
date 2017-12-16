@@ -34,6 +34,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },  
+      
       // If it's a .scss file 
       {
         test: /\.scss$/,

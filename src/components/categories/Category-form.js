@@ -6,7 +6,7 @@ class CategoryForm extends React.Component {
 
     super(props);
 
-    this.state = this.props.category || {name:''};
+    this.state = this.props.category || {name:'', budget:''};
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -18,6 +18,7 @@ class CategoryForm extends React.Component {
       e.preventDefault();
       console.log(this.props.handler, this.state);
       this.props.handler( Object.assign({}, this.state));
+      this.setState({name: '', budget: ''})
     }
 
     handleChange(e) {
@@ -27,16 +28,26 @@ class CategoryForm extends React.Component {
     render() {
       return (
 
-        <form className="categoryForm" onSubmit={this.handleSubmit} >
+        <form id="formDefault" onSubmit={this.handleSubmit} >
+          <div id="categoryForm">
           <input
-            class='catInputs'
+            className="catInputs"
             type="text"
             name="name"
             value={this.state.name}
-            placeholder="column name"
+            placeholder="category name"
             onChange={this.handleChange}
-            onBlur={this.handleSubmit}
             />
+          <input
+            className="catInputs"
+            type="number"
+            name="budget"
+            value={this.state.budget}
+            placeholder="budget"
+            onChange={this.handleChange}
+          />
+          </div>
+          <input id='categorySubmitButton' type='submit' value={this.props.submitText}/>
         </form>
       )
     }

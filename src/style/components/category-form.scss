@@ -1,3 +1,28 @@
-input.catInputs {
+#formDefault {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div#categoryForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+input {
   border-radius: 2px;
+}
+
+input.catInputs {
+  margin-right: 1.5em;
+}
+
+#categorySubmitButton {
+  display: block;
+  margin-top: .7em;
+  width: 8em;
+  height: 2.5em;
+  margin-right: 1.5em;
 }
