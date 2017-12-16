@@ -1,10 +1,11 @@
 import uuid from 'uuid/v4';
 
-export const create = ({name,cost}) => ({
+export const create = ({name,cost,categoryID}) => ({
   type: 'EXPENSE_CREATE',
   payload: {
     id: uuid(),
     created: Date.now(),
+    categoryID,
     name,
     cost,
   },
