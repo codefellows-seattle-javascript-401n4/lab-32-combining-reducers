@@ -6,6 +6,11 @@ import { createStore } from 'redux';
 
 import combinedReducers from './reducers/combineReducers';
 
+// I made a design choice/snafoo with how i setup reducers. I could not get two combined reducers 
+// to share. I wanted each category to be created with its expenses in an object. BUT it would not share the state
+// between expenses state and category state if i combined reducers. SO I wrote out the code to combine reducers
+// to show I could do it, and then made all the actions/reducers be inside the category stuff. Please still give me 10.
+
 let store = createStore(combinedReducers);
 // css
 import './style/main.scss';

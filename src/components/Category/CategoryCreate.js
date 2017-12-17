@@ -21,7 +21,7 @@ class CategoryCreate extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="category-create">
                 Category Creation
                 <form>
                     <input onChange={this.captureInput} id="name" placeholder="Name your category."></input>

@@ -10,9 +10,9 @@ import initialState from '../lib/initialState';
           return newState;
 
         case 'CATEGORY_UPDATE':
-
+     
           let updateState = {...state};
-
+    
           updateState[action.content.id].name = action.content.text;
           return updateState;
 
@@ -43,14 +43,15 @@ import initialState from '../lib/initialState';
          return toggleExpense;
 
          case 'EXPENSE_DESTROY':
+
             let expenseDestroy = {...state};
             delete expenseDestroy[action.expense.categoryID].expenses[action.expense.id];
 
             return expenseDestroy;
 
         case 'EXPENSE_UPDATE':
+            
             let expenseUpdate = {...state};
-
            expenseUpdate[action.expense.categoryID].expenses[action.expense.id].expense = action.update;
 
         return expenseUpdate;

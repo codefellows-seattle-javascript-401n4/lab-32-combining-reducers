@@ -21,11 +21,12 @@ class ExpenseCreate extends React.Component {
 
     render() {
         return (
-            <form>
+            <form className="expense-create">
                 Create Your Expense: 
-
+                <br />
                 <input onChange={this.captureInput} id="expense" placeholder="Expense Name" ></input>
                 <input onChange={this.captureInput} id="cost" placeholder="Cost" ></input>
+                <br />
                 <button onClick={this.createExpense}>Create Expense</button>
             </form>
         )

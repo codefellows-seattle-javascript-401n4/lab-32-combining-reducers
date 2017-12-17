@@ -12,7 +12,7 @@ class App extends React.Component {
     
     render() {
         return (
-            <div>
+            <div id="base-div">
                 <nav>
                     <Link to="/">Home</Link>
                 </nav>

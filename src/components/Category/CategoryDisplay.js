@@ -30,12 +30,13 @@ class CategoryDisplay extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="category-display">
             <p>Category Name: {this.props.category.name}</p>
             <p>Category Budget: {this.props.category.budget}</p>
 
             <button onClick={this.toggle}>Update Category</button>
             <button onClick={this.deleteThis}>Delete Category</button>
+            <br />
             <br />
             Expenses:
             <br />

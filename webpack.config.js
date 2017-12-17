@@ -37,7 +37,7 @@ module.exports = {
             // If it's a .scss file 
             {
                 test: /\.scss$/,
-                loader: ExtractPlugin.extract({
+                loader: ['css-hot-loader'].concat(ExtractPlugin.extract({
                     // These get loaded in reverse order and the output of one pipes into the other (think of a then)
                     use: [
                         {
@@ -55,7 +55,7 @@ module.exports = {
                             }
                         }
                     ]
-                })
+                }))
             },
             
         ]

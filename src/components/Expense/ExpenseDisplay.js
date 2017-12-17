@@ -16,7 +16,7 @@ class ExpenseDisplay extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="expense-display">
                 Expense: {this.props.expense.expense}
                 <br />
                 Cost: {this.props.expense.cost}

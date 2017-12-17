@@ -22,10 +22,11 @@ const ExpenseUpdate = ({expense, actions}) => {
     }
 
     return(
-        <div>
+        <div className="expense-update">
             Update Your Expense:
             <br />
             <input placeholder={expense.expense} onChange={trackChangeText}></input>
+            <br />
             <button onClick={sendUpdate}>Update Expense</button>
             <button onClick={cancel}>Cancel Update</button>
         </div>

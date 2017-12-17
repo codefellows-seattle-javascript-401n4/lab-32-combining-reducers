@@ -16,10 +16,11 @@ const CategoryUpdate = ({updateCategory, category, toggleCategory}) => {
     }
 
     return(
-        <div>
+        <div className="category-update">
             Update your Category Name: 
             <br />
             <input placeholder={category.name} onChange={trackChangeText}></input>
+            <br />
             <button onClick={sendUpdate}>Update Category</button>
             <button onClick={cancel}>Cancel Update</button>
         </div>
