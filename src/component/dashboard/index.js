@@ -9,7 +9,8 @@ import * as expense from '../../action/expense.js';
 class Dashboard extends React.Component{
 
   componentDidUpdate(){
-    console.log(this.props.categories);
+    console.log('__CATEGORIES__', this.props.categories);
+    console.log('__EXPENSES__', this.props.expenses);
   };
  
   render(){
@@ -25,7 +26,7 @@ class Dashboard extends React.Component{
             categoryUpdate={this.props.categoryUpdate}
           />
           <ExpenseForm 
-            onComplete={this.props.expenseUpdate} 
+            onComplete={this.props.expenseCreate} 
             categoryID={category.id}
           />
         </div>
@@ -37,8 +38,8 @@ class Dashboard extends React.Component{
 
 let mapStateToProps = (state) => {
   return {
-    categories: state || [],
-    expenses: state || {},
+    categories: state.categories || [],
+    expenses: state.expenses || {},
   }
 }
 

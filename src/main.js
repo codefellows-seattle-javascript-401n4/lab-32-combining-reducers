@@ -5,9 +5,9 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 import App from './component/app';
-import catergoryReducer from './reducer/categories';
+import reducer from './reducer/index.js';
 
-let store = createStore(catergoryReducer);
+let store = createStore(reducer);
 
 const container = document.createElement('div');
 document.body.appendChild(container);
