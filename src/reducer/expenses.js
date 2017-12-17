@@ -2,8 +2,13 @@ const emptyState = {};
 
 export default (state=emptyState, {type, payload}) => {
   switch(type){
+    case 'CATEGORY_CREATE':
+      return {...state, [payload.id]:[]};
     case 'EXPENSE_CREATE':
-      return {...state, [payload.categoryID]:payload};
+      let categoryID = payload.categoryID;
+      let category = state[categoryID];
+      let result = [...category, payload];
+      return {...state, [categoryID]: result};
     case 'EXPENSE_UPDATE':
       return state;
     default:
