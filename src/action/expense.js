@@ -1,6 +1,6 @@
 import uuid from 'uuid/v4';
 
-export const create = ({name,cost,categoryID}) => ({
+export const create = ({categoryID,name,cost}) => ({
   type: 'EXPENSE_CREATE',
   payload: {
     id: uuid(),

@@ -6,7 +6,6 @@ import ExpenseForm from '../expense-form';
 import * as category from '../../action/category.js';
 import * as expense from '../../action/expense.js';
 
-
 class Dashboard extends React.Component{
 
   componentDidUpdate(){
@@ -25,14 +24,16 @@ class Dashboard extends React.Component{
             categoryRemove={this.props.categoryRemove}
             categoryUpdate={this.props.categoryUpdate}
           />
-          <ExpenseForm onComplete={this.props.expenseCreate} />
+          <ExpenseForm 
+            onComplete={this.props.expenseUpdate} 
+            categoryID={category.id}
+          />
         </div>
       )}
     </div>
     )
   }
 }
-
 
 let mapStateToProps = (state) => {
   return {
@@ -47,6 +48,7 @@ let mapDispatchToProps = (dispatch) => {
     categoryUpdate: (data) => dispatch(category.update(data)),
     categoryRemove: (data) => dispatch(category.destroy(data)),
     expenseCreate: (data) => dispatch(expense.create(data)),
+    expenseUpdate: (data) => dispatch(expense.update(data)),
   }
 }
 

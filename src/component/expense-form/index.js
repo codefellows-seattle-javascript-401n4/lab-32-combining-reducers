@@ -1,5 +1,10 @@
 import React from 'react';
 
+let emptyState = {
+  name: '',
+  cost: 0,
+}
+
 class ExpenseForm extends React.Component{
   constructor(props){
     super(props);
@@ -15,13 +20,16 @@ class ExpenseForm extends React.Component{
   }
 
   handleChange(e){
-    let {key,value} = e.target;
-    this.setState({[key]:value});
+    let {name,value} = e.target;
+    this.setState({[name]:value});
   }
 
   handleSubmit(e){
     e.preventDefault();
+    console.log(this.props);
     this.props.onComplete(this.state);
+    console.log('expense state', this.state)
+    // this.setState(emptyState);
   }
 
 
@@ -47,6 +55,8 @@ class ExpenseForm extends React.Component{
           value={this.state.cost}
           onChange={this.handleChange}
         />
+
+        <button type='submit'> create expense </button>
 
       </form>
     )
