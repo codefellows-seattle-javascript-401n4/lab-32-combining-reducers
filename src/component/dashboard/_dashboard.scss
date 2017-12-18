@@ -4,12 +4,14 @@
     margin: auto;
     width: 90%;
     
+
     h1 {
-        background-color: $color-light-gray * 1.1;
-        border: 1px solid $color-light-gray;
-        color: $color-blue;
+        background-color: $color-light-gray;
+        border: 2px solid $color-green;
+        color: $color-green;
         font-size: 2em;
         height: auto;
+        margin-bottom: 1em;
         text-align: center;
     }
 }

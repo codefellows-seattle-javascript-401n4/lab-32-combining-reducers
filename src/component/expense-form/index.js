@@ -57,6 +57,8 @@ class ExpenseForm extends React.Component{
 
         {this.props.expenses[this.props.categoryID].map((expense,i) => 
           <h1 key={i}> {expense.name} </h1>
+
+          // 
         )}
 
       </div>

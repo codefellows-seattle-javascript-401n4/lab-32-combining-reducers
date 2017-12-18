@@ -1,18 +1,36 @@
 @import 'vars';
 
 .category-form {
+    background-color: $color-light-gray;
+    border: 2px solid $color-green;
     display: flex;
-    justify-content: space-between;
-    margin: 2em;
-    
-    form {
-      margin: auto;
-    }
-    
+    margin: auto;
+    padding: .5em;
+    text-align: center;
+        
     input {
-        display: flex;
-        width: 40%;
-        border: 1px solid $color-blue;
+        border: 1px solid $color-green;
+        display: inline-flex;
+        margin: .3em;
     }
+
+    .type-input {
+        width: 30%
+    }
+
+    .amount-input {
+        text-align: center;
+        width: 2em;
+    }
+    
+    button {
+        background-color: $color-green;
+        border-radius: 10px;
+        color: $color-light-gray;
+        margin: auto;
+        padding: .5em;
+        width: auto;
+    }
+
 }
 
