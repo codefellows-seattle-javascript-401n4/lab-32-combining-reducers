@@ -28,6 +28,7 @@ class Dashboard extends React.Component{
           <ExpenseForm 
             onComplete={this.props.expenseCreate} 
             categoryID={category.id}
+            expenses={this.props.expenses}
           />
         </div>
       )}

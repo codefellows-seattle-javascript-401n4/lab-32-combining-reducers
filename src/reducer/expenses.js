@@ -11,6 +11,9 @@ export default (state=emptyState, {type, payload}) => {
       return {...state, [categoryID]: result};
     case 'EXPENSE_UPDATE':
       return state;
+    case 'EXPENSE_DELETE':
+      console.log('deleting');
+      return state
     default:
       return state;
   }

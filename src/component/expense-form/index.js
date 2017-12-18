@@ -34,29 +34,32 @@ class ExpenseForm extends React.Component{
 
   render(){
     return(
-      <form 
-        className='expense-form'
-        onSubmit={this.handleSubmit}
-      >
+      <div className='expense-form'>
+        <form 
+          className='expense-form'
+          onSubmit={this.handleSubmit}
+        >
+          <input
+            name='name'
+            placeholder='expense item'
+            type='text'
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+          <input
+            name='cost'
+            type='number'
+            value={this.state.cost}
+            onChange={this.handleChange}
+          />
+          <button type='submit'> create expense </button>
+        </form>
 
-        <input
-          name='name'
-          placeholder='expense item'
-          type='text'
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
+        {this.props.expenses[this.props.categoryID].map((expense,i) => 
+          <h1 key={i}> {expense.name} </h1>
+        )}
 
-        <input
-          name='cost'
-          type='number'
-          value={this.state.cost}
-          onChange={this.handleChange}
-        />
-
-        <button type='submit'> create expense </button>
-
-      </form>
+      </div>
     )
   }
 }
