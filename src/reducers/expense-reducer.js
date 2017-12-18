@@ -1,19 +1,26 @@
 import initialState from '../lib/initialState';
 
-// this is a template expense reducer. I know how to do it, I've just gone a different direction with my design and this won't work. 
-
 const expenseReducer = (state = initialState, action) => {
+    let {type, expense} = action;
+    let oldState = {...state};
+
     switch(action.type) {
         case 'EXPENSE_CREATE':
+            oldState[expense.id] = expense;
+            return oldState;
 
-            return {...state, test: true};
+        case 'EXPENSE_TOGGLE':
+            oldState[expense.id].updating = !oldState[expense.id].updating;
+            return oldState;
+
+        case 'EXPENSE_DESTROY':
+            delete oldState[expense.id];
+            return oldState;
 
         case 'EXPENSE_UPDATE':
-            return state;
-        
-        case 'EXPENSE_DESTROY':
-            return state;
-        
+            oldState[expense.id].expense = expense.updatedContent;
+            return oldState;
+
         default:
             return state;
     }
