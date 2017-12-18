@@ -2,7 +2,7 @@ import React from 'react';
 import { noop } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { CategoryType } from '../../app/types';
+import { CategoryType } from '../../store/types';
 import CategoryForm from '../form';
 
 class CategoryEditForm extends React.Component {

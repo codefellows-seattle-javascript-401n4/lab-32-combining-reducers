@@ -3,11 +3,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { CategoryType } from '../../app/types';
+import { CategoryType } from '../../store/types';
 import CategoryForm from '../../components/category-create-form';
 import CategoryList from '../../components/category-list';
 
-import { categoryCreate, categoryUpdate, categoryDelete } from '../../app/actions';
+import { categoryCreate, categoryUpdate, categoryDelete } from '../../store/categories/actions';
 
 class Categories extends React.Component {
   render() {

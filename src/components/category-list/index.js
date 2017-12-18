@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CategoryItem from '../category-item';
-import { CategoryType } from '../../app/types';
+import { CategoryType } from '../../store/types';
 
 class CategoryList extends React.Component {
   render() {

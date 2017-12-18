@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { CategoryType } from '../../app/types';
+import { CategoryType } from '../../store/types';
 import CategoryEditForm from '../category-edit-form';
 
 class CategoryItem extends React.Component {
