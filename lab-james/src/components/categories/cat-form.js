@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import {createCategory} from '../../app/actions.js';
+
 class CatForm extends React.Component {
 
   constructor(props){
@@ -11,7 +13,7 @@ class CatForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    
+
   }
 
   handleChange(e){
@@ -40,7 +42,7 @@ class CatForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state.categories
+  categories: state
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({

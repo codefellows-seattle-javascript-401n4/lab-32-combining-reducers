@@ -6,15 +6,15 @@ class CatNav extends React.Component {
 
   constructor(props){
     super(props);
-
-    console.log('cats', this.props.categories);
   }
 
   render(){
     return(
       <div>
         {
-
+          this.props.categories.map(category => (
+            <p key={category.id}>{category.name}</p>
+          ))
         }
       </div>
     )
@@ -23,7 +23,7 @@ class CatNav extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state.categories
+  categories: state
 });
 
 export default connect(mapStateToProps)(CatNav);
