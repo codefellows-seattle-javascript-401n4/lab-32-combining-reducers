@@ -14,6 +14,7 @@ const expenseReducer = (state = initialState, action) => {
             return oldState;
 
         case 'EXPENSE_DESTROY':
+
             delete oldState[expense.id];
             return oldState;
 

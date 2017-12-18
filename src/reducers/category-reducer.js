@@ -14,7 +14,7 @@ import initialState from '../lib/initialState';
           return oldState;
 
         
-        case 'CATEGORY_DESTROY':
+        case 'CATEGORY_DELETE':
           delete oldState[category];
           return oldState;
 

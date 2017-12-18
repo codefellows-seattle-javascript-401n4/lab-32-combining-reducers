@@ -16,10 +16,6 @@ class Dashboard extends React.Component {
         super(props);
     }
 
-    componentDidUpdate() {
-        console.log('__PROPS__:', this.props);
-    }
-
     categoryDisplay = () => {
         return Object.keys(this.props.state.categories).map(category_key => {
             let localCategory = this.props.state.categories[category_key];

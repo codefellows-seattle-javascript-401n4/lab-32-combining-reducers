@@ -15,7 +15,7 @@ export const category_update = (content) => {
 
 export const category_delete = id => {
     return {
-        type: 'CATEGORY_DESTROY',
+        type: 'CATEGORY_DELETE',
         category: id
     }
 }
