@@ -1,3 +1,4 @@
+import './_category-form.scss';
 import React from 'react';
 
 let emptyState = {
@@ -33,29 +34,30 @@ class CategoryForm extends React.Component{
     let button = this.props.category ? 'update category' : 'create category';
 
     return(
-      <form
-        className='category-form'
-        onSubmit={this.handleSubmit}>
-
-        <input
-          type='text'
-          name='name'
-          placeholder='category name'
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-
-        <input
-          type='number'
-          name='budget'
-          placeholder='budgeted amount'
-          value={this.state.budget}
-          onChange={this.handleChange}
-        />
-
-        <button type='submit'> {button} </button>
-      
-      </form>
+      <div className='category-form'>
+        <form
+          onSubmit={this.handleSubmit}>
+  
+          <input
+            type='text'
+            name='name'
+            placeholder='category name'
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+  
+          <input
+            type='number'
+            name='budget'
+            placeholder='budgeted amount'
+            value={this.state.budget}
+            onChange={this.handleChange}
+          />
+  
+          <button type='submit'> {button} </button>
+        
+        </form>
+      </div>
     )
   }
 }
