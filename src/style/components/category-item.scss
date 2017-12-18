@@ -1,7 +1,6 @@
 #categoryHeader {
   display: flex;
   flex-direction: row;
-  margin-right: 1em;
   background: none;
 }
 
@@ -9,9 +8,15 @@ a#deleteButton {
   text-decoration: none;
   color: rgb(233, 28, 28);
   padding: .3em;
+  margin-right: 2.8em;
   padding-top: .3em;
 
     &:hover {
       color: rgb(104, 14, 14);
     }
+}
+
+div.category-item {
+
+  margin-bottom: 1.5em;
 }

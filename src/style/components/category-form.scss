@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &:hover {
+    @include box-basic;
+    background: black;
+    outline: none;
+  }
+
 }
 
 div#categoryForm {
@@ -10,19 +17,66 @@ div#categoryForm {
   align-items: center;
 }
 
-
-input {
-  border-radius: 2px;
+#categoryName {
+  width: 80px;
 }
 
-input.catInputs {
-  margin-right: 1.5em;
+#budgetAmt {
+  width: 35px;
+}
+
+
+input {
+  border-radius: 3px;
+  margin-right: .3em; 
+  border:1px solid transparent;
+  color: black;
+  font-style: bold;   
+  font-size: .6em;
+
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 #categorySubmitButton {
   display: block;
   margin-top: .7em;
   width: 8em;
-  height: 2.5em;
-  margin-right: 1.5em;
+  height: 3em;
+  margin-right: 2em;
+
+}
+
+input.inactive {
+  background: black;
+  color: white;
+  border: 1px ivory;
+
+    #categoryName {
+      align-content: right;
+    }
+
+
+    &:hover, &:focus {
+      background: white;
+      color: black;
+    }
+}
+
+#categorySubmitButton.hidden {
+  display: none;
+  visibility: hidden;
+
+  &:hover, &:focus {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.invisible {
+  display: none;
 }

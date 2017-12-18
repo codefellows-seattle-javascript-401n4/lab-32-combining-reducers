@@ -4,8 +4,9 @@ import {connect} from 'react-redux';
 
 import CategoryForm from './Category-form';
 import CategoryList from './Category-list';
+import store from '../../lib/store';
 
-import {createCategory, updateCategory, deleteCategory} from '../../appState/actions';
+import {createCategory, updateCategory, deleteCategory} from './categoryState/category-actions';
 
 class Categories extends React.Component {
 
@@ -19,6 +20,7 @@ class Categories extends React.Component {
 	}
 	
   render() {
+		console.log(this.props.categories);
     return (
 			<div id="categoryWrapper">
 				<CategoryForm submitText={this.state.submitText} handler={this.props.handleAddCategory} />

@@ -8,7 +8,8 @@ class CategoryList extends React.Component {
 
   render() {
 
-    const categories = this.props.categories;
+    const categories = this.props.categories.categories;
+    console.log('categories is ', categories)
     return (
       <div id="kanban">
         {

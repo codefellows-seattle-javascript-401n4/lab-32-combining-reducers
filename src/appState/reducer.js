@@ -1,20 +1,9 @@
-const emptyState = [];
+import {combineReducers} from 'redux';
 
-export default (state=emptyState, {type, payload}) => {
+import categoryReducer from '../components/categories/categoryState/category-reducer';
+import expenseReducer from '../components/expenses/expenseState/expense-reducer';
 
-  switch ( type ) {
-
-    case "CATEGORY_ADD":
-     return [...state, payload];
-
-    case "CATEGORY_UPDATE":
-     return state.map(item => item.id === payload.id ? payload : item );
-      
-    case "CATEGORY_DESTROY":
-     return state.filter(item => item.id !== payload)
-      
-    default:
-        return state;
-
-  }
-};
+export default combineReducers({
+  categories: categoryReducer,
+  expenses: expenseReducer
+})
