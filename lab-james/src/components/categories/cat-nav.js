@@ -1,23 +1,25 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {renderIf} from '../../lib/renderIf.js';
 
 class CatNav extends React.Component {
 
   constructor(props){
     super(props);
+
+    console.log('cats', this.props.categories);
   }
 
   render(){
     return(
       <div>
         {
-          this.props.categories.map(category =>
-            <p>category.name</p>
-          )
+
         }
       </div>
     )
   }
+
 }
 
 const mapStateToProps = state => ({

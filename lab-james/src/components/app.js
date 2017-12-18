@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Header from './header.js';
-import CatNav from './cat-nav.js';
+import CatNav from './categories/cat-nav.js';
+import CatForm from './categories/cat-form.js';
 
 class App extends React.Component {
 
@@ -14,6 +15,7 @@ class App extends React.Component {
       <div>
        <Header />
        <CatNav />
+       <CatForm />
       </div>
     )
   }
