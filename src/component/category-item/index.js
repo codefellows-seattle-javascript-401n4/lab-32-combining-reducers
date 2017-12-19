@@ -10,11 +10,10 @@ class CategoryItem extends React.Component{
         <button 
           onClick={() => this.props.categoryRemove(this.props.category)}
           className='delete-button'
-          > x </button>
+        > x </button>
         <CategoryForm category={this.props.category} onComplete={this.props.categoryUpdate}/>
       </div>
-
-    )
+    );
   }
 }
 
