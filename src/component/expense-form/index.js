@@ -55,7 +55,7 @@ class ExpenseForm extends React.Component{
         </form>
 
         <ExpenseItem 
-          deleteExpense={this.props.deleteExpense}
+          expenseDelete={this.props.expenseDelete}
           expenses={this.props.expenses} 
           categoryID={this.state.categoryID}/> 
 
