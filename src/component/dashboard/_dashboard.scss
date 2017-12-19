@@ -12,6 +12,12 @@
         font-size: 2em;
         height: auto;
         margin-bottom: 1em;
+        padding: .2em;
         text-align: center;
     }
+}
+
+.category-wrapper {
+    display: flex;
+    justify-content: space-between;    
 }

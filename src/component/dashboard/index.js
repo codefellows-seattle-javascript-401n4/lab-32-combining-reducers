@@ -13,26 +13,46 @@ class Dashboard extends React.Component{
     console.log('__CATEGORIES__', this.props.categories);
     console.log('__EXPENSES__', this.props.expenses);
   };
+
+  componentWillMount(){
+    this.props.categoryCreate({
+      name: 'First Thing',
+      budget: 100,
+    })
+
+    this.props.categoryCreate({
+      name: 'Anotha One',
+      budget: 100,
+    })
+
+    this.props.categoryCreate({
+      name: 'moar',
+      budget: 100,
+    })
+
+  }
  
   render(){
     return(
     <div className='dashboard'>
-      <h1> goozgooz welcomes you </h1>
+      <h1> welcome to goozgooz's budget helper </h1>
       <CategoryForm onComplete={this.props.categoryCreate}/>
-      {this.props.categories.map((category,i) =>
-        <div key={category.id}> 
-          <CategoryItem 
-            category={category} 
-            categoryRemove={this.props.categoryRemove}
-            categoryUpdate={this.props.categoryUpdate}
-          />
-          <ExpenseForm 
-            onComplete={this.props.expenseCreate} 
-            categoryID={category.id}
-            expenses={this.props.expenses}
-          />
-        </div>
-      )}
+        <div className='category-wrapper'>
+        {this.props.categories.map((category,i) =>
+          <div key={category.id}> 
+            <CategoryItem 
+              category={category} 
+              categoryRemove={this.props.categoryRemove}
+              categoryUpdate={this.props.categoryUpdate}
+            />
+            <ExpenseForm 
+              onComplete={this.props.expenseCreate} 
+              categoryID={category.id}
+              expenses={this.props.expenses}
+            />
+          </div>
+        )}
+      </div>
     </div>
     )
   }
