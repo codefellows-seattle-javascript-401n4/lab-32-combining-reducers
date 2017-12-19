@@ -34,7 +34,7 @@ class ExpenseForm extends React.Component{
 
   render(){
     return(
-      <div className='expense-form'>
+      <div className='category-form'>
         <form 
           className='expense-form'
           onSubmit={this.handleSubmit}
