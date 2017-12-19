@@ -4,6 +4,13 @@ import React from 'react';
 class ExpenseItem extends React.Component{
   constructor(props){
     super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.deleteExpense();
   }
 
     render(){
@@ -11,7 +18,8 @@ class ExpenseItem extends React.Component{
         <div className='expense-item'>
           {this.props.expenses[this.props.categoryID].map((expense,i) => 
             <div key={expense.id}>
-              <h3> {(expense.name)} </h3>
+              <p> {(expense.name)} </p>
+              <button onClick={this.handleSubmit}> x </button>
             </div>
           )}
         </div>

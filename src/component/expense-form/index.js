@@ -31,8 +31,6 @@ class ExpenseForm extends React.Component{
     this.setState(emptyState);
   }
 
-
-
   render(){
     return(
       <div className='category-form'>
@@ -56,7 +54,10 @@ class ExpenseForm extends React.Component{
           <button type='submit'> create expense </button>
         </form>
 
-        <ExpenseItem expenses={this.props.expenses} categoryID={this.state.categoryID}/> 
+        <ExpenseItem 
+          deleteExpense={this.props.deleteExpense}
+          expenses={this.props.expenses} 
+          categoryID={this.state.categoryID}/> 
 
       </div>
     )

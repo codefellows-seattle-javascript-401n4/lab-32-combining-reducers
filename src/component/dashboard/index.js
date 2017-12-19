@@ -30,7 +30,6 @@ class Dashboard extends React.Component{
       name: 'moar',
       budget: 100,
     })
-
   }
  
   render(){
@@ -50,6 +49,7 @@ class Dashboard extends React.Component{
               onComplete={this.props.expenseCreate} 
               categoryID={category.id}
               expenses={this.props.expenses}
+              expenseDelete={this.props.expenseDelete}
             />
           </div>
         )}
@@ -72,7 +72,7 @@ let mapDispatchToProps = (dispatch) => {
     categoryUpdate: (data) => dispatch(category.update(data)),
     categoryRemove: (data) => dispatch(category.destroy(data)),
     expenseCreate: (data) => dispatch(expense.create(data)),
-    expenseUpdate: (data) => dispatch(expense.update(data)),
+    expenseDelete: (data) => dispatch(expense.destroy(data)),
   }
 }
 
