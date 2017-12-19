@@ -32,6 +32,7 @@ class CategoryForm extends React.Component{
   
   render(){
     let button = this.props.category ? 'update category' : 'create category';
+    
 
     return(
       <div className='category-form'>

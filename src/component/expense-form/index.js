@@ -1,3 +1,4 @@
+import ExpenseItem from '../expense-item';
 import React from 'react';
 
 let emptyState = {
@@ -55,11 +56,7 @@ class ExpenseForm extends React.Component{
           <button type='submit'> create expense </button>
         </form>
 
-        {this.props.expenses[this.props.categoryID].map((expense,i) => 
-          <h1 key={i}> {expense.name} </h1>
-
-          // 
-        )}
+        <ExpenseItem expenses={this.props.expenses} categoryID={this.state.categoryID}/> 
 
       </div>
     )

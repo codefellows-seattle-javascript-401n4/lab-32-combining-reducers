@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
 import ExpenseForm from '../expense-form';
+import ExpenseItem from '../expense-item';
 import * as category from '../../action/category.js';
 import * as expense from '../../action/expense.js';
 

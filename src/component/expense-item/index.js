@@ -1,3 +1,4 @@
+import './expense-item.scss';
 import React from 'react';
 
 class ExpenseItem extends React.Component{
@@ -7,7 +8,15 @@ class ExpenseItem extends React.Component{
 
     render(){
       return(
-        <h1> {this.props.section.name} </h1>
+        <div className='expense-item'>
+          {this.props.expenses[this.props.categoryID].map((expense,i) => 
+            <div key={expense.id}>
+              <h3> {(expense.name)} </h3>
+            </div>
+          )}
+        </div>
       )
     }
 };
+
+export default ExpenseItem;
