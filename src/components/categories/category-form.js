@@ -12,7 +12,7 @@ class CategoryForm extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         console.log(this.props.handler, this.state);
-        this.props.handler(this.state);//  Object.assign({}, 
+        this.props.handler(Object.assign({},this.state));
     }
 
     handleChange(e) {
@@ -24,19 +24,21 @@ class CategoryForm extends React.Component{
         console.log('in category form::::', this.props)
         return(
             <form className="categoryForm" onSubmit={this.handleSubmit}>
-               <input type ="text"
-                    name="title"
-                    value={this.state.title}
-                    placeholder="New Category Name"
-                    onChange={this.handleChange}
-               />
-                <input type="number"
-                    name="budget"
-                    value = {this.state.budget}
-                    placeholder="Enter Category Budget"
-                    onChange={this.handleChange}
-                />
-                <input type="submit" value ={this.props.submit} />
+                    <span><h4>{this.props.label}</h4></span>
+                    <input type ="text"
+                            name="title"
+                            value={this.state.title}
+                            placeholder="New Category Name"
+                            onChange={this.handleChange}
+                    />  
+                    <input type="number"
+                        name="budget"
+                        value = {this.state.budget}
+                        placeholder="Enter Category Budget"
+                        onChange={this.handleChange}
+                    />
+                    <input type="submit" value ={this.props.submit} />
+                
             </form>
         )
     }

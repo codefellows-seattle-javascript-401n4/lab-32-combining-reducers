@@ -20,14 +20,15 @@ class ExpenceForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.handler( Object.assign({}, this.state) );
+        this.props.handler(Object.assign({}, this.state));
+        setState({title:'', amount:0});
     }
 
     render() {
         return (
                 <form className="expenceForm" onSubmit={this.handleSubmit}>
                     <label>
-                        <span>Expense:</span>
+                        <span>{this.props.label}</span>
                         <input
                             type="text"
                             name="title"
