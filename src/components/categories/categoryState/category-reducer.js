@@ -1,7 +1,7 @@
 const emptyState = [];
 
 export default (state=emptyState, {type, payload}) => {
-
+  
   switch ( type ) {
 
     case "CATEGORY_ADD":

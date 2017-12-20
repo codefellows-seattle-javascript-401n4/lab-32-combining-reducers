@@ -1,7 +1,10 @@
-#formDefault {
+#ExpenseWrapper {
+  margin-top: 1em;
+}
+
+.ExpenseForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   &:hover {
     @include box-basic;
@@ -11,43 +14,31 @@
 
 }
 
-div#categoryForm {
+#expenseHeader {
+  margin-top: 1em;
+  background: none;
+}
+
+div#ExpenseDiv {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-#categoryName {
+#expenseName {
   width: $category-name-width;
 }
 
-#budgetAmt {
+#expenseAmt {
   width: $budget-amt-width;
 }
 
-
-input {
-  border-radius: 3px;
-  margin-right: .3em; 
-  border:1px solid transparent;
-  color: black;
-  font-style: bold;   
-  font-size: .6em;
-
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
-#categorySubmitButton {
+#expenseSubmitButton {
   display: block;
   margin-top: .7em;
   width: 8em;
   height: 3em;
-  margin-right: 2em;
+  margin-left: 3em;
 
 }
 
@@ -56,18 +47,21 @@ input.inactive {
   color: white;
   border: 1px ivory;
 
-    #categoryName {
-      align-content: right;
-    }
-
-
     &:hover, &:focus {
       background: white;
       color: black;
     }
 }
 
-#categorySubmitButton.hidden {
+a#deleteExpense {
+  text-decoration: none;
+  color: #e91c1c;
+  padding: .3em;
+  margin-right: 2.8em;
+  padding-top: .3em;
+}
+
+#expenseSubmitButton.hidden {
   display: none;
   visibility: hidden;
 

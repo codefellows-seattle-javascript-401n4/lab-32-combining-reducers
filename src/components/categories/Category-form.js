@@ -57,7 +57,7 @@ class CategoryForm extends React.Component {
           placeholder="$"
           onChange={this.handleChange}
         />
-        <a id='deleteButton' class={this.deleteButton} href="#" onClick={()=>this.props.handleDelete(this.props.category.id)}>X</a>
+        <a id='deleteButton' className={this.deleteButton} href="#" onClick={()=>this.props.handleDelete(this.props.category.id)}>X</a>
         </div>
         <input 
         id='categorySubmitButton' 
