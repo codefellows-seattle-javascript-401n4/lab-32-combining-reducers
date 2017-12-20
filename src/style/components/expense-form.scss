@@ -35,22 +35,26 @@ div#ExpenseDiv {
 
 #expenseSubmitButton {
   display: block;
-  margin-top: .7em;
   width: 8em;
   height: 3em;
-  margin-left: 3em;
+  margin-left: 1.3em;
+  color: rgb(22, 152, 22);
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 13px;
+
+  &:hover {
+    color: rgb(9, 89, 9);
+  }
 
 }
 
 input.inactive {
   background: black;
   color: white;
+  font-size: 11px;
   border: 1px ivory;
-
-    &:hover, &:focus {
-      background: white;
-      color: black;
-    }
 }
 
 a#deleteExpense {
@@ -65,10 +69,10 @@ a#deleteExpense {
   display: none;
   visibility: hidden;
 
-  &:hover, &:focus {
-    display: block;
-    visibility: visible;
-  }
+  // &:hover, &:focus {
+  //   display: block;
+  //   visibility: visible;
+  // }
 }
 
 .invisible {

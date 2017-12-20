@@ -24,12 +24,6 @@ class ExpenseForm extends React.Component {
 
   }
 
-  // componentWillReceiveProps(){
-  //   let state = store();
-  //   this.setState = {state};
-
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.props.handler, this.state);
@@ -47,7 +41,7 @@ class ExpenseForm extends React.Component {
       <form className="ExpenseForm" onSubmit={this.handleSubmit} >
         <div id='ExpenseDiv'>
           <input
-            className='expenseInputs'
+            className={this.formState}
             id="expenseName"
             type="text"
             name="expense"
@@ -57,7 +51,7 @@ class ExpenseForm extends React.Component {
             onChange={this.handleChange}
             />
           <input
-            className='expenseInputs'
+            className={this.formState}
             id="expenseAmt"
             type="number"
             name="cost"
