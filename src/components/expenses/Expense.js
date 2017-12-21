@@ -13,17 +13,18 @@ class Expense extends React.Component {
 
     this.state = {
 			submitText: 'Add Expense'
-		}
+    }
   }
 
   render() {
 
-    let {categoryId, expenses} = this.props;
+    let {categoryId, expenses, categoryBudget} = this.props;
 
     return (
       <div id='ExpenseWrapper'>
         <ExpenseForm handler={this.props.createExpense}
                      categoryId={categoryId}
+                     categoryBudget={categoryBudget}
                      submitText={this.state.submitText}/>
         <ExpenseList
           categoryId={categoryId}

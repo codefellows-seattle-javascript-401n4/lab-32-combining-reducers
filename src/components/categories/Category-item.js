@@ -25,7 +25,8 @@ class CategoryItem extends React.Component {
              formState={this.state.formState}
              submitState={this.state.submitState}/>
           </header>
-          <Expense categoryId={this.props.category.id} />
+          <Expense categoryId={this.props.category.id}
+                   categoryBudget={this.props.category.budget}/>
         </div>
       )
     }

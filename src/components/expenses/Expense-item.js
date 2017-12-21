@@ -19,6 +19,8 @@ class ExpenseItem extends React.Component {
           <header id="expenseHeader">
             <ExpenseForm handler={this.props.handleUpdate} 
              handleDelete={this.props.handleDelete}
+             categoryBudget={this.props.categoryBudget}
+             updateBudget={this.props.updateBudget}
              expense={this.props.expense} 
              categoryId={this.props.categoryId}
              submitText={this.state.submitText}

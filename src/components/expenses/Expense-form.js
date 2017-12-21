@@ -1,5 +1,5 @@
 import React from 'react';
-import store from '../../lib/store'
+import store from '../../appState/store'
 
 class ExpenseForm extends React.Component {
 
@@ -10,7 +10,8 @@ class ExpenseForm extends React.Component {
     let initialState = {
       expense:'',
       cost:'',
-      categoryId:this.props.categoryId
+      categoryId: this.props.categoryId,
+      remainingBudget: this.props.categoryBudget
     }
 
     this.state = this.props.expense || initialState;
@@ -24,20 +25,32 @@ class ExpenseForm extends React.Component {
 
   }
 
+  updateBudget(){
+      let remainingBudget = this.state.remainingBudget - this.state.cost;
+      this.setState({remainingBudget});
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.props.handler, this.state);
     this.props.handler( Object.assign({}, this.state));
-    this.setState({expense: '', cost: ''})      
+    this.setState({expense: '', cost: ''})       
   }
 
   handleChange(e) {
     this.setState({[e.target.name]:e.target.value});
   }
 
-  render() {
-    return (
+  componentWillReceiveProps(nextProps) {
+    if(this.props.categoryBudget !== nextProps.categoryBudget){
+      let categoryBudget = nextProps.categoryBudget;
+      this.setState({categoryBudget});
+    }
+  }
 
+  render() {
+
+    return (
       <form className="ExpenseForm" onSubmit={this.handleSubmit} >
         <div id='ExpenseDiv'>
           <input

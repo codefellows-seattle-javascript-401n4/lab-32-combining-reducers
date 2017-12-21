@@ -5,6 +5,9 @@ export default (state=initialState, action) => {
   let {type, payload={}} = action;  
   let {id, categoryId} = payload;
   let categoryExpenses = state[categoryId];
+  console.log('categoryExpenses is ', categoryExpenses)
+  console.log('categoryId is ', categoryId)
+  
 
   switch(type) {
 
