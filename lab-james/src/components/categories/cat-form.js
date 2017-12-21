@@ -32,10 +32,11 @@ class CatForm extends React.Component {
       <div className="overlay">
         <div className="modal">
           <form onSubmit={this.handleSubmit}>
-            <label htmlFor="name">Name:
+            <a className="close-button" onClick={this.props.toggleCatForm}>x</a>
+            <label className="form-field" htmlFor="name">Name:
               <input type="text" id="name" onChange={this.handleChange} />
             </label>
-            <label htmlFor="budget">Budget:
+            <label className="form-field" htmlFor="budget">Budget:
               <input type="number" id="budget" onChange={this.handleChange} />
             </label>
             <input type="submit" value="Submit" />

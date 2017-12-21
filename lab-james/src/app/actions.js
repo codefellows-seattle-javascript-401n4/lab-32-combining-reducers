@@ -11,6 +11,8 @@ export const createCategory = category => {
   category.id = uuid();
   category.createDate = new Date();
   category.render = true;
+  category.expenses = 0;
+  category.expenses = 0;
 
   return {
     type: 'CATEGORY_ADD',
@@ -18,7 +20,7 @@ export const createCategory = category => {
   };
 };
 
-export const updateCategory = category => {
+export const updateCat = category => {
   return {
     type: 'CATEGORY_UPDATE',
     payload: category,
