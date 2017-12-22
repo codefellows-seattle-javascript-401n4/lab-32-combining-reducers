@@ -5,6 +5,8 @@ export default (state=emptyState, {type, payload}) => {
   switch ( type ) {
 
     case "CATEGORY_ADD":
+    console.log('state is ', [...state, payload]);      
+    
      return [...state, payload];
 
     case "CATEGORY_UPDATE":

@@ -17,6 +17,12 @@ class Categories extends React.Component {
 			submitText: 'Add Category'
 		}
 	}
+
+	componentWillReceiveProps(nextProps){
+		if(nextProps.category){
+			this.setState(nextProps.category)
+		}
+	}
 	
   render() {
 		return (

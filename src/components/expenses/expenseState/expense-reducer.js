@@ -6,12 +6,14 @@ export default (state=initialState, action) => {
   let {id, categoryId} = payload;
   let categoryExpenses = state[categoryId];
   console.log('categoryExpenses is ', categoryExpenses)
-  console.log('categoryId is ', categoryId)
+  console.log('categoryId is ', categoryId);
+  console.log('state in reducer is ', state);
+  console.log('state[categoryId] is', state[categoryId]);
   
 
   switch(type) {
 
-      case "CATEGORY_ADD":        
+      case "CATEGORY_ADD":  
         return {...state, [payload.id]:[]};
 
       case "CATEGORY_DESTROY":
