@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {renderIf} from '../../lib/renderIf.js';
 import {packSet} from '../../lib/pack-set.js';
 
-import {catNavUpdate} from '../../app/actions.js';
+import {catNavUpdate} from './cat-actions.js';
 
 import '../../style/components/cat.scss';
 
@@ -51,7 +51,7 @@ class CatNav extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state
+  categories: state.categories
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({

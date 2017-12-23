@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {createCategory} from '../../app/actions.js';
+import {createCategory} from './cat-actions.js';
 
 import '../../style/components/modal.scss';
 
@@ -23,6 +23,7 @@ class CatForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+    this.state.budget = parseInt(this.state.budget);
     this.props.handleCreateCategory(Object.assign({}, this.state));
     this.props.toggleCatForm();
   }
@@ -49,7 +50,7 @@ class CatForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state
+  categories: state.categories
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({

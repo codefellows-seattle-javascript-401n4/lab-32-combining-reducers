@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {updateCat} from '../../app/actions.js';
+import {updateCat} from './cat-actions.js';
 
 import '../../style/components/modal.scss';
 
@@ -48,7 +48,7 @@ class CatUpdateForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state
+  categories: state.categories
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
