@@ -3,15 +3,15 @@ import {connect} from 'react-redux';
 
 import {expenceCreate, expenceUpdate, expenceDelete} from './expence-actions';
 
-import expenceList from './expence-list';
+import ExpenceList from './expence-list';
 
 class Expences extends React.Component {
-
     render() {
+       console.log('catID in expence-cont::::', this.props.categoryId)
         return (
-            <expenceList
+            <ExpenceList
                 categoryId={this.props.categoryId}
-                expences={this.props.expence}
+                expences={this.props.expences}
                 handleAdd={this.props.expenceCreate}
                 handleDelete={this.props.expenceDelete}
                 handleUpdate={this.props.expenceUpdate}
@@ -22,7 +22,7 @@ class Expences extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    expence:state.expence
+    expences:state.expences
 })
 
 const mapDispatchToProps = (dispatch,getState) => ({

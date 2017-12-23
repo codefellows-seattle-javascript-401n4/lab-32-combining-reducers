@@ -2,7 +2,7 @@ import React from 'react';
 
 import CategoryForm from './category-form';
 
-import ExpenceForm from '../expences/expence-form';
+import ExpenceContainer from '../expences/expence-container';
 
 class CategoryItem extends React.Component{
     constructor(props){
@@ -17,14 +17,8 @@ class CategoryItem extends React.Component{
                     <h4>{this.props.category.budget}</h4>
                     <a id ="delCat"href="#" onClick={()=>this.props.handleDel(this.props.category)}>x</a>
                 </header>
-                <CategoryForm handler={this.props.handleUpd} category={this.props.category} label = 'Edit Budget' submit="save edit"/>    
-                <form>
-                    <span><h4>Enter Expence:</h4></span>
-                    <ExpenceForm label ='Enter Category' />
-                    
-                </form>
-
-
+                <CategoryForm handle={this.props.handleUpd} category={this.props.category} label = 'Edit Budget' submit="save edit"/>    
+                <ExpenceContainer categoryID = {this.props.category.id}/>
             </div>
         )
     }

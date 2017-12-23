@@ -20,36 +20,27 @@ class ExpenceForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.handler(Object.assign({}, this.state));
-        setState({title:'', amount:0});
+        this.props.handleAdd(Object.assign({}, this.state));
+        setState({title:'', amount:0})
     }
 
     render() {
         return (
                 <form className="expenceForm" onSubmit={this.handleSubmit}>
-                    <label>
-                        <span>{this.props.label}</span>
                         <input
                             type="text"
                             name="title"
+                            placeholder="expence"
                             value={this.state.title}
                             onChange={this.handleChange}
                         />
-                    </label>
-
-                    <label>
-                        <span>Amount</span>
                         <input
                             type="number"
                             name="amount"
                             value={this.state.amount}
                             onChange={this.handleChange}
                         />
-                    </label>
-
-                    <input type = "Submit" value = {this.props.value}>
-                    </input>
-
+                    <input type = "submit" value = {this.props.submit}/>
                 </form>
         )
     }

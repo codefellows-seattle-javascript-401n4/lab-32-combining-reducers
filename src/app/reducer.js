@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 
 import categoryReducer from '../components/categories/category-reducer';
-import cardReducer from '../components/expences/expence-reducer';
+import expenceReducer from '../components/expences/expence-reducer';
 
 
 export default combineReducers({
     categories: categoryReducer,
-    cards: cardReducer
+    expences: expenceReducer
 });

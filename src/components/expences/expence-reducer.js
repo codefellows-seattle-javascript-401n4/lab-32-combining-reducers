@@ -10,7 +10,7 @@ export default (state=initialState, action) => {
         case "ADD_CATEGORY":
             return {...state, [payload.id]:[]};
         case "ADD_EXPENCE":
-        return {...state, [categoryId]: [...categoryExpences, payload]};
+            return {...state, [categoryId]: [...categoryExpences, payload]};
         // case "DELETE_CATEGORY":
         //     return {};
         // case "DELETE_EXPENCE":

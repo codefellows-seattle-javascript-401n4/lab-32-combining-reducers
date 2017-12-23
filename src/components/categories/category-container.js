@@ -28,10 +28,10 @@ class Categories extends React.Component{
     render(){
         return(
             <div className="catsContainer">
-                <CategoryForm handler={this.handleAdd} submit = "add category"/>
+                <CategoryForm  handler={this.handleAdd} submit = "add category"/>
                 <CategoryList 
                     cats={this.props.categories} 
-                    handleDel={this.handleDelete} 
+                    handleDel={this.handleDelete}  
                     handleUpd={this.handleUpdate} 
                 />
             </div>
