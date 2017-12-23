@@ -56,65 +56,35 @@ describe('Reducer tests', () => {
 	})
 
 	describe('Expense Reducer tests', () => {
-		
-		let category = {
-			name: 'Groceries',
-			budget: '300',
-			createDate: new Date(),
-			id: uuid(),
-			expenses: {}
-		};	
-	
-		let expense = { 
-			expense: '', 
-			cost: '', 
-			createDate: new Date(), 
-			id: uuid(),
-			categoryId: category.id
-		 
-		};
-		
+				
 		test('add a new expense', () => {
-			let action = {type: 'EXPENSE_ADD', payload: expense};
-			let state = expenseReducer(state, action);
+
+			let categoryId = uuid();	
+			let expenseObj = {
+				expense: 'PCC', 
+				cost: '200', 
+				id: uuid(),
+				categoryId: categoryId
+			};
+
+			let state = {
+				[categoryId]: expenseObj
+			}
+			
+			  state = expenseReducer(state, {
+				type: 'EXPENSE_ADD', 
+				payload: {
+					expense: 'PCC', 
+					cost: '200', 
+					id: uuid(),
+					categoryId: categoryId
+				}
+			});
 	
-			expect(state.length).toEqual(1);
-			expect(state[0].expense).toEqual('PCC');
-			expect(state[0].cost).toEqual('200');
+			expect(state[categoryId][0].expense).toEqual('PCC');
+			expect(state[categoryId][0].cost).toEqual('200');
 				
 		});
-		
-			// test('update a expense', () => {
-				
-			// 	let newexpense = {name: 'New and improved!'};			
-		
-			// 		state = reducer(state, {
-			// 		type: 'EXPENSE_UPDATE',
-			// 		payload: {
-			// 			name: newexpense.name,
-			// 			createDate: new Date(),
-			// 			id: expense.id,
-			// 		}
-			// 	});
-		
-			// 	expect(state[0].name).toEqual('New and improved!');
-			// 	expect(state.length).toEqual(1);
-			// });
-		
-			// test('delete a expense', () => {
-			
-			// 	let cat1 = {name: 'Cat1', id: uuid()};
-			// 	let cat2 = {name: 'Cat2', id: uuid()};
-			// 	state = [{...cat1}, {...cat2}];
-				
-			// 	state = reducer(state, {
-			// 		type: 'EXPENSE_DELETE', 
-			// 		payload: cat1.id
-			// 	});
-		
-			// 	expect(state.length).toEqual(1);
-			// 	expect(state[0].name).toEqual('Cat2');
-			// });
-		})
+	})
 })
 

@@ -9,7 +9,7 @@ class ExpenseForm extends React.Component {
 
     let initialState = {
       expense:'',
-      cost:'',
+      cost:0,
       categoryId: this.props.categoryId,
       remainingBudget: this.props.categoryBudget
     }
@@ -33,8 +33,9 @@ class ExpenseForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.props.handler, this.state);
+    this.state.cost = parseInt(this.state.cost);
     this.props.handler( Object.assign({}, this.state));
-    this.setState({expense: '', cost: ''})       
+    this.setState({expense: '', cost: 0})       
   }
 
   handleChange(e) {

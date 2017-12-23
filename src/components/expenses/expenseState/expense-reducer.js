@@ -1,15 +1,12 @@
+import { log } from "util";
+
 const initialState = {};
 
 export default (state=initialState, action) => {
   
   let {type, payload={}} = action;  
   let {id, categoryId} = payload;
-  let categoryExpenses = state[categoryId];
-  console.log('categoryExpenses is ', categoryExpenses)
-  console.log('categoryId is ', categoryId);
-  console.log('state in reducer is ', state);
-  console.log('state[categoryId] is', state[categoryId]);
-  
+  let categoryExpenses = state[categoryId]; 
 
   switch(type) {
 

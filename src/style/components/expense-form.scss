@@ -21,6 +21,7 @@
 
 div#ExpenseDiv {
   border: 1px solid grey;
+  background: #006700;
   border-bottom: none;
   padding: .4em 0 1.5em 1em;
   display: flex;
@@ -48,8 +49,8 @@ div#ExpenseDiv {
   display: block;
   width: 8em;
   height: 3em;
-  margin-left: 1.3em;
-  color:lightgreen;
+  margin-left: 3.9em;
+  color: #169816;
   background: none;
   outline: none;
   border: none;
@@ -66,6 +67,7 @@ input.inactive {
   color: white;
   font-size: 11px;
   border: 1px ivory;
+  padding: 8px;
 }
 
 a#deleteExpense {
@@ -79,11 +81,6 @@ a#deleteExpense {
 #expenseSubmitButton.hidden {
   display: none;
   visibility: hidden;
-
-  // &:hover, &:focus {
-  //   display: block;
-  //   visibility: visible;
-  // }
 }
 
 .invisible {
