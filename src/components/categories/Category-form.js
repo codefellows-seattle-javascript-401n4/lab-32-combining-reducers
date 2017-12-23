@@ -29,8 +29,6 @@ class CategoryForm extends React.Component {
   }
 
   handleChange(e) {
-    // this.formState = 'active';
-    // this.submitState = 'visible'
     this.setState({[e.target.name]:(e.target.value).toUpperCase()});
   }
 
