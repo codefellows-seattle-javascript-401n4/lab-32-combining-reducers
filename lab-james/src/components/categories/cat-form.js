@@ -24,6 +24,7 @@ class CatForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     this.state.budget = parseInt(this.state.budget);
+    this.state.remaining = this.state.budget;
     this.props.handleCreateCategory(Object.assign({}, this.state));
     this.props.toggleCatForm();
   }

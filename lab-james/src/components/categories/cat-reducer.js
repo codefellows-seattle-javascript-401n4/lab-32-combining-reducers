@@ -15,6 +15,8 @@ export default (state=initialState, action) => {
 
   case 'EXP_ADD': return state.map(item => item.id === payload.catId ? (item.expenses += payload.amount) && (item.remaining = item.budget - item.expenses) && item : item);
 
+  case 'EXP_DELETE': return state.map(item => item.id === payload.catId ? (item.expenses = item.expenses - payload.amount) && (item.remaining = item.budget - item.expenses) && item : item);
+
   default: return state;
 
   }

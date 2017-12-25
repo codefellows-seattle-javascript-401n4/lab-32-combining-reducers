@@ -12,7 +12,7 @@ export const createCategory = category => {
   category.createDate = new Date();
   category.render = true;
   category.expenses = 0;
-  category.remaining = 0;
+  // category.remaining = 0;
 
   return {
     type: 'CATEGORY_ADD',

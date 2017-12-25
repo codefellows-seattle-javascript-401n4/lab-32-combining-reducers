@@ -10,9 +10,9 @@ export const createExp = exp => {
   };
 };
 
-export const tallyExp = exp => {
+export const deleteExp = expId => {
   return {
-    type: 'EXP_TALLY',
-    payload: exp,
+    type: 'EXP_DELETE',
+    payload: expId,
   };
 };

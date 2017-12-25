@@ -23,6 +23,8 @@ class CatUpdateForm extends React.Component {
 
   handleUpdate(e){
     e.preventDefault();
+    this.state.budget = parseInt(this.state.budget);
+    console.log(this.state);
     this.props.handleUpdateCat(Object.assign({}, this.state));
     this.props.toggleUpdate();
   }
