@@ -18,7 +18,6 @@ class CatUpdateForm extends React.Component {
 
   handleChange(e){
     this.setState({[e.target.id]: e.target.value});
-    console.log(this.state);
   }
 
   handleUpdate(e){

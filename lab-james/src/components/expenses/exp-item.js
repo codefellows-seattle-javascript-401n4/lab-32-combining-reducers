@@ -11,7 +11,6 @@ class ExpItem extends React.Component {
   }
 
   deleteExp(){
-    console.log(this.props.expense);
     this.props.handleDeleteExp(Object.assign({}, this.props.expense));
   }
 
