@@ -22,6 +22,7 @@
   background: #fff;
   margin: 1em;
   padding: 1em;
+  height: 220px;
 }
 
 .form-field {
@@ -36,4 +37,10 @@
 
 form {
   padding: 1em;
+}
+
+.cat-details {
+  display: inline-block;
+  border-right: 1px solid black;
+  width: 25%;
 }

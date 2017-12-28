@@ -33,7 +33,7 @@ class CatUpdateForm extends React.Component {
       <div className="overlay">
         <div className="modal">
           <form onSubmit={this.handleUpdate}>
-            <a className="close-button" onClick={this.props.toggleUpdateForm}>x</a>
+            <a className="close-button" onClick={this.props.toggleUpdate}>x</a>
             <label className="form-field" htmlFor="name">Name:
               <input type="text" id="name" onChange={this.handleChange} defaultValue={this.state.name} />
             </label>

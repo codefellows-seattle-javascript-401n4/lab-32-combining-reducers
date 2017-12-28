@@ -4,6 +4,8 @@ import {renderIf} from '../../lib/renderIf.js';
 
 import ExpItem from './exp-item.js';
 
+import '../../style/components/exp.scss';
+
 class ExpList extends React.Component {
 
   constructor(props){
