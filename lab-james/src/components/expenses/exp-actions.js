@@ -16,3 +16,10 @@ export const deleteExp = expId => {
     payload: expId,
   };
 };
+
+export const updateExp = exp => {
+  return {
+    type: 'EXP_UPDATE',
+    payload: exp,
+  };
+};

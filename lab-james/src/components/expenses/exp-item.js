@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {deleteExp} from './exp-actions';
 import {renderIf} from '../../lib/renderIf.js';
 
+import ExpUpdateForm from './exp-update-form.js';
 
 import '../../style/components/exp.scss';
 
@@ -41,6 +42,10 @@ class ExpItem extends React.Component {
         <a className="close-button" onClick={this.deleteExp}>x</a>
         <h5>{this.props.expense.name}</h5>
         <h5>Amount: {this.props.expense.amount}</h5>
+        {renderIf(
+          this.state.renderUpdate,
+          <ExpUpdateForm expense={this.props.expense} toggleUpdate={this.toggleUpdate}/>
+        )}
       </div>
     )
   }
