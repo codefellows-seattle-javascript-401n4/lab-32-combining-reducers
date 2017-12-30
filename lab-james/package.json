@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest -i --verbose",
     "watch": "webpack-dev-server --inline --hot",
     "build": "webpack"
   },
@@ -35,5 +35,13 @@
     "uuid": "^3.1.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
+  },
+  "devDependencies": {
+    "babel-jest": "^22.0.4",
+    "enzyme": "^3.3.0",
+    "enzyme-to-json": "^3.3.0",
+    "jest": "^22.0.4",
+    "jest-css-modules": "^1.1.0",
+    "react-test-renderer": "^16.2.0"
   }
 }
