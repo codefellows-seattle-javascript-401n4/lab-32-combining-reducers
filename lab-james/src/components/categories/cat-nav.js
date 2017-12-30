@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {renderIf} from '../../lib/renderIf.js';
+import {packSet} from '../../lib/pack-set.js';
 
-import {catNavUpdate} from '../../app/actions.js';
+import {catNavUpdate} from './cat-actions.js';
 
 import '../../style/components/cat.scss';
 
@@ -11,22 +12,27 @@ class CatNav extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {};
-
     this.handleCatSelect = this.handleCatSelect.bind(this);
     this.handleShowAll = this.handleShowAll.bind(this);
   }
 
-  handleCatSelect(e){
-    this.setState({id: 5, value: false});
-    this.props.handleCatNavUpdate(Object.assign({}, this.state));
+  handleCatSelect(id){
+    this.props.categories.map(cat => {
+      let pack = {};
+      pack.id = id;
+      pack.cat = cat;
+      pack.cat = packSet(id, pack.cat);
+      this.props.handleCatNavUpdate(Object.assign({}, pack));
+  })
   }
 
   handleShowAll(){
-    this.props.categories.map(cat => (
-      this.setState({id: cat.id, value: true}),
-      this.props.handleCatNavUpdate(Object.assign({}, this.state))
-    ))
+    let pack = {};
+    this.props.categories.map(cat => {
+      pack.cat = cat;
+      pack.cat.render = true;
+      this.props.handleCatNavUpdate(Object.assign({}, pack));
+    })
   }
 
   render(){
@@ -35,7 +41,7 @@ class CatNav extends React.Component {
         <p className="cat-nav-item" onClick={this.handleShowAll}>Show All</p>
         {
           this.props.categories.map(category => (
-            <p key={category.id} id={category.id} onClick={this.handleCatSelect} className="cat-nav-item">{category.name}</p>
+            <p key={category.id} onClick={() => this.handleCatSelect(category.id)} className="cat-nav-item">{category.name}</p>
           ))
         }
       </div>
@@ -45,7 +51,7 @@ class CatNav extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state
+  categories: state.categories
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({

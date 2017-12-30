@@ -23,7 +23,7 @@ class CatList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state
+  categories: state.categories
 });
 
 export default connect(mapStateToProps)(CatList);

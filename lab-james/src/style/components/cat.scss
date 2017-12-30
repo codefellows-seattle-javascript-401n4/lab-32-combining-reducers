@@ -5,7 +5,7 @@
 
 .cat-nav-item {
   display: inline-block;
-  // border-left: 1px solid black;
+  cursor: pointer;
   border-right: 1px solid black;
   padding: 1em;
   width: 10%;
@@ -22,4 +22,25 @@
   background: #fff;
   margin: 1em;
   padding: 1em;
+  height: 220px;
+}
+
+.form-field {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.close-button {
+  cursor: pointer;
+  float: right;
+}
+
+form {
+  padding: 1em;
+}
+
+.cat-details {
+  display: inline-block;
+  border-right: 1px solid black;
+  width: 25%;
 }
