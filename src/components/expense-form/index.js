@@ -4,13 +4,13 @@ import { noop } from 'lodash';
 
 import BaseForm from '../form';
 
-class CategoryCreateForm extends React.Component {
+class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
     this.buttons = [{
-      key: 'submit-categories',
+      key: 'submit-expense',
       type: 'submit',
-      value: 'Submit',
+      value: 'Submit Expense',
       handler: noop,
     }];
     this.onSubmit = this.onSubmit.bind(this);
@@ -18,7 +18,7 @@ class CategoryCreateForm extends React.Component {
   }
 
   onSubmit() {
-    this.props.addCategory(Object.assign({}, this.state));
+    this.props.addExpense(Object.assign({}, this.state));
   }
 
   setFormState(newState) {
@@ -39,8 +39,8 @@ class CategoryCreateForm extends React.Component {
   }
 }
 
-CategoryCreateForm.propTypes = {
-  addCategory: PropTypes.func.isRequired,
+ExpenseForm.propTypes = {
+  addExpense: PropTypes.func.isRequired,
 };
 
-export default CategoryCreateForm;
+export default ExpenseForm;

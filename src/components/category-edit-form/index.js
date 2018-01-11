@@ -8,7 +8,7 @@ import CategoryForm from '../form';
 class CategoryEditForm extends React.Component {
   constructor(props) {
     super(props);
-    this.inputs = [
+    this.buttons = [
       {
         key: 'cancel',
         type: 'button',
@@ -56,7 +56,7 @@ class CategoryEditForm extends React.Component {
       <CategoryForm
         onSubmit={this.onSubmit}
         setFormState={this.setFormState}
-        inputs={this.inputs}
+        buttons={this.buttons}
         category={category}
         current={category}
       />

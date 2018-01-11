@@ -8,6 +8,7 @@ import CategoryForm from '../../components/category-create-form';
 import CategoryList from '../../components/category-list';
 
 import { categoryCreate, categoryUpdate, categoryDelete } from '../../store/categories/actions';
+import { expenseCreate, expenseUpdate, expenseDelete } from '../../store/expenses/actions';
 
 class Categories extends React.Component {
   render() {
@@ -31,13 +32,17 @@ class Categories extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state,
+  categories: state.categories,
+  expenses: state.expenses,
 });
 
 const mapDispatchToProps = dispatch => ({
   addCategory: category => dispatch(categoryCreate(category)),
   updateCategory: category => dispatch(categoryUpdate(category)),
   deleteCategory: category => dispatch(categoryDelete(category)),
+  expenseCreate: category => dispatch(expenseCreate(category)),
+  expenseUpdate: category => dispatch(expenseUpdate(category)),
+  expenseDelete: category => dispatch(expenseDelete(category)),
 });
 
 Categories.propTypes = {

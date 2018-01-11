@@ -21,7 +21,7 @@ class CategoryForm extends React.Component {
 
   render() {
     const {
-      inputs,
+      buttons,
       inputId,
       current,
     } = this.props;
@@ -37,7 +37,7 @@ class CategoryForm extends React.Component {
           />
         </label>
         <div>
-          {inputs.map(ele =>
+          {buttons.map(ele =>
             <input key={ele.key} type={ele.type} value={ele.value} onClick={ele.handler} />)}
         </div>
       </form>
@@ -48,7 +48,7 @@ class CategoryForm extends React.Component {
 CategoryForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   setFormState: PropTypes.func.isRequired,
-  inputs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  buttons: PropTypes.arrayOf(PropTypes.object).isRequired,
   inputId: PropTypes.string,
   current: PropTypes.shape({
     content: PropTypes.string,

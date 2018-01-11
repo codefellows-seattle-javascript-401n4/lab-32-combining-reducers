@@ -8,7 +8,7 @@
 ## Requirements  
 #### Feature Tasks
 ##### expense
-* in this app a expense should contain at least the following propertys
+* in this app a expense should contain at least the following properties
   * `id` a uuid
   * `categoryID` an id that corresponds to an existing category
   * `timestamp` a date from when the category was created
