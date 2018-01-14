@@ -1,5 +1,5 @@
 'use strict';
-import '../src/style/main.scss';
+import '../style/main.scss';
 import React from 'react';
 import {Route} from 'react-router-dom';
 import DashBoard from './dashboard.js';
