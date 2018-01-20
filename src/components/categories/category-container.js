@@ -7,7 +7,7 @@ import CategoryDisplay from './category-display';
 import CategoryUpdate from './category-update';
 import {categoryCreate, categoryDelete, categoryToggle, categoryUpdate} from '../../app/category-actions';
 import * as expense from '../../app/expense-actions';
-
+console.log('LogExpense', expense);
 class Categories extends React.Component {
 
   constructor(props) {
@@ -19,7 +19,7 @@ class Categories extends React.Component {
     return this.props.state.category.map( (category,i) => {
       return (category.updating) ?
       <CategoryUpdate key={i} category={category} update={this.props.updateCategory} toggle={this.props.categoryToggle} /> :
-      <CategoryDisplay key={i} category={category} deleteCategory={this.props.deleteCategory} toggle={this.props.categoryToggle} />
+      <CategoryDisplay key={i} expenseAction={this.props.expenseFunctions} category={category} deleteCategory={this.props.deleteCategory} toggle={this.props.categoryToggle} />
     } )
   }
 
@@ -36,16 +36,19 @@ class Categories extends React.Component {
 const mapStateToProps = state => ({
   state
 });
-
+console.log('ExpenseLog', expense);
 const mapDispatchToProps = (dispatch, getState) => ({
   createCategory: category => dispatch(categoryCreate(category)),
   deleteCategory: _id => dispatch(categoryDelete(_id)),
   categoryToggle: _id => dispatch(categoryToggle(_id)),
   updateCategory: payload => dispatch(categoryUpdate(payload)),
-  createExpense: expense => dispatch(expense.createExpense(expense)),
-  deleteExpense: _id => dispatch(expense.deleteExpense(_id)),
-  expenseToggle: _id => dispatch(expense.expenseToggle(_id)),
-  updateExpense: payload => dispatch(expense.updateExpense(payload))
+
+  expenseFunctions: {
+    createExpense: payload => dispatch(expense.expenseCreate(payload)),
+    deleteExpense: _id => dispatch(expense.expenseDelete(_id)),
+    expenseToggle: _id => dispatch(expense.expenseToggle(_id)),
+    updateExpense: payload => dispatch(expense.expenseUpdate(payload))
+}
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
