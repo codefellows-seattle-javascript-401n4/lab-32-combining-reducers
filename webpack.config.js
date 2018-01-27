@@ -7,29 +7,25 @@ const HTMLPlugin = require('html-webpack-plugin');
 const ExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-
+    
     // Load this and everythning it cares about
-    entry: `${__dirname}/src/main.js`,
-
-    devServer: {
-        historyApiFallback:true
-    },
-
+    entry: `${__dirname}/src/Main.js`,
+    
     devtool: 'source-map',
-
+    
     // Stick it into the "path" folder with that file name
     output: {
         filename: 'bundle.[hash].js',
         path: `${__dirname}/build`
-    },
-
+    }, 
+    
     plugins: [
         new HTMLPlugin({
             template: `${__dirname}/src/index.html`
         }),
         new ExtractPlugin('bundle.[hash].css')
     ],
-
+    
     module: {
         rules: [
             // If it's a .js file not in node_modules, use the babel-loader
@@ -37,15 +33,15 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
-            },
-            // If it's a .scss file
+            },  
+            // If it's a .scss file 
             {
                 test: /\.scss$/,
-                loader: ExtractPlugin.extract({
+                loader: ['css-hot-loader'].concat(ExtractPlugin.extract({
                     // These get loaded in reverse order and the output of one pipes into the other (think of a then)
                     use: [
                         {
-                            loader: 'css-loader',
+                            loader: 'css-loader', 
                             options: {
                                 sourceMap:true
                             }
@@ -59,10 +55,10 @@ module.exports = {
                             }
                         }
                     ]
-                })
+                }))
             },
-
+            
         ]
     }
-
+    
 }

@@ -1,38 +1,27 @@
-import uuid from 'uuid/v4';
+export const expense_create = expense => {
+    return {
+        type: 'EXPENSE_CREATE',
+        expense
+    }
+}
 
-export const expenseCreate = (expense) => {
+export const expense_update = (expense) => {
+    return {
+        type: 'EXPENSE_UPDATE',
+        expense
+    }
+}
 
-  expense.id = uuid();
-  expense.createDate = new Date();
-  expense.updating = false;
+export const expense_destroy = expense => {
+    return {
+        type: 'EXPENSE_DESTROY',
+        expense
+    }
+}
 
-  return {
-    type:"EXPENSE_ADD",
-    payload: expense
-  };
-};
-
-export const expenseDelete = (_id) => {
-
-  return {
-    type:"EXPENSE_DELETE",
-    payload: _id
-  };
-
-};
-
-export const expenseToggle = (_id) => {
-
-  return {
-    type:"EXPENSE_TOGGLE",
-    payload: _id
-  };
-};
-
-export const expenseUpdate = (payload) => {
-
-  return {
-    type:"EXPENSE_UPDATE",
-    payload
-  };
-};
+export const expense_toggle = expense => {
+    return {
+        type: 'EXPENSE_TOGGLE',
+        expense
+    }
+}

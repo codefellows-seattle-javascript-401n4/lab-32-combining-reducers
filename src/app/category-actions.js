@@ -1,38 +1,28 @@
-import uuid from 'uuid/v4';
 
-export const categoryCreate = (category) => {
+export const category_create = category => {
+    return {
+        type: 'CATEGORY_CREATE',
+        category
+    }
+}
 
-  category.id = uuid();
-  category.createDate = new Date();
-  category.updating = false;
+export const category_update = (content) => {
+    return {
+        type: 'CATEGORY_UPDATE',
+        category: content
+    }
+}
 
-  return {
-    type:"CATEGORY_ADD",
-    payload: category
-  };
-};
+export const category_delete = id => {
+    return {
+        type: 'CATEGORY_DELETE',
+        category: id
+    }
+}
 
-export const categoryDelete = (_id) => {
-
-  return {
-    type:"CATEGORY_DELETE",
-    payload: _id
-  };
-
-};
-
-export const categoryToggle = (_id) => {
-
-  return {
-    type:"CATEGORY_TOGGLE",
-    payload: _id
-  };
-};
-
-export const categoryUpdate = (payload) => {
-
-  return {
-    type:"CATEGORY_UPDATE",
-    payload
-  };
-};
+export const category_toggle = id => {
+    return {
+        type: 'CATEGORY_TOGGLE',
+        category: id
+    }
+}

@@ -1,34 +1,31 @@
 import React from 'react';
-import Categories from './category-container';
+import ReactDom from 'react-dom';
 
-class CategoryUpdate extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  runToggle = () => {
-    this.props.toggle(this.props.category.id);
-  }
-  changeCategory = (e) => {
-    e.preventDefault();
-    this.props.update({id: this.props.category.id, name: this.state.name})
-    this.runToggle();
-  }
-  captureChange = (e) => {
-    this.setState({
-      name: e.target.value
-    });
-  }
-  render() {
-    return (
-      <div>
-      <form>
-        <input type="text" onChange={this.captureChange} />
-        <button onClick={this.changeCategory}>Change</button>
-        <button onClick={this.runToggle}>Cancel Update</button>
-      </form>
-      </div>
-    )
-  }
-}
+const CategoryUpdate = ({category, action}) => {
 
-module.exports = CategoryUpdate;
+    let updatedContent = '';
+
+    const cancel = () => {
+        action.toggleCategoryUpdate(category.id);
+    }
+    const trackChangeText = (event) => {
+        updatedContent = event.target.value;
+    }
+    const sendUpdate = () => {
+        action.updateCategory({updatedContent, id: category.id});
+        action.toggleCategoryUpdate(category.id);
+    }
+
+    return(
+        <div className="category-update">
+            Update your Category Name: 
+            <br />
+            <input placeholder={category.name} onChange={trackChangeText}></input>
+            <br />
+            <button onClick={sendUpdate}>Update Category</button>
+            <button onClick={cancel}>Cancel Update</button>
+        </div>
+    );
+};
+
+export default CategoryUpdate;
