@@ -1,4 +1,4 @@
-401 JS --  Lab 31 Budget Tracker
+401 JS --  Lab 32 Budget Tracker
 ===
 
 ## Program Instructions
