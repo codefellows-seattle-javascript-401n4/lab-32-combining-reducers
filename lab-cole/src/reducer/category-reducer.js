@@ -1,16 +1,20 @@
 const emptyState = []
 
 export default (state=emptyState, {type, payload}) => {
-  switch(type){
-    case 'SECTION_CREATE':
+
+  switch(type) {
+
+    case 'CATEGORY_CREATE':
       return [...state, payload]
-    case 'SECTION_UPDATE':
+    case 'CATEGORY_UPDATE':
       return state.map(item => item.id === payload.id ? payload : item)
-    case 'SECTION_REMOVE':
+    case 'CATEGORY_DESTROY':
       return state.filter(item => item.id !== payload.id)
-    case 'SECTION_CLEAR':
+    case 'CATEGORY_CLEAR':
       return emptyState
     default:
       return state
+
   }
+
 }

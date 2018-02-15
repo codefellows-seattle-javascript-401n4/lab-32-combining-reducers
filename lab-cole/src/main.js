@@ -1,22 +1,35 @@
-import './style/main.scss'
-import React from 'react'
-import ReactDom from 'react-dom'
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
+import './style/main.scss';
 
-import App from './component/app'
-import reducer from './reducer'
+import React from 'react';
+import ReactDom from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
 
-let store = createStore(reducer)
+import App from './components/app';
 
-store.subscribe(() => {
-  console.log('__STATE__', store.getState())
-})
+import createStore from './app/store';
 
-const container = document.createElement('div')
-document.body.appendChild(container)
-ReactDom.render(
-  <Provider store={store}>
-    <App />
-  </Provider>, 
-container)
+const store = createStore();
+
+class Main extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    store.subscribe( () => console.log("__STORE__", store.getState()) );
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <App/>
+        </BrowserRouter>
+      </Provider>
+    )
+  }
+}
+
+ReactDom.render(<Main/>, document.getElementById('root'));

@@ -1,34 +1,39 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import Section from '../section'
-import SectionForm from '../section-form'
-import * as section from '../../action/section.js'
+import React from 'react';
+import {connect} from 'react-redux';
+import CategoryForm from '../category-form';
+import CategoryItem from '../category-item';
+import * as category from '../../action/category-actions.js';
+import ExpenseForm from '../expense-form';
+import ExpenseItem from '../expense-item';
+import * as expense from '../../action/expense-actions.js';
 
 class Landing extends React.Component {
-  render(){
-    let {
-      sections,
-      sectionCreate,
-    } = this.props
+  constructor(props) {
+    super(props);
+  }
 
+  render() {
     return (
       <div className='landing'>
-        <SectionForm onComplete={sectionCreate} />
-        {sections.map((section, i) => 
-          <Section key={i} section={section} />
+        <CategoryForm onComplete={CategoryForm} />
+        {categories.map((category, i) => 
+          <div>
+            <h2> {category.title} </h2>
+            <button onClick={() => categoryRemove(category)}> Delete Category </button>
+            <CategoryForm category={category} onComplete={categoryUpdate} />
+          </div>
+        )}
+        <ExpenseForm onComplete={ExpenseForm} />
+        {expenses.map((expense, i) => 
+          <div>
+            <h2> {expense.title} </h2>
+            <button onClick={() => expenseRemove(expense)}> Delete Expense </button>
+            <ExpenseForm expense={expense} onComplete={expenseUpdate} />
+          </div>
         )}
       </div>
     )
   }
 }
 
-// return objects that will become props for the compoent
-let mapStateToProps = (state) => ({
-  sections: state.sections,
-})
-
-let mapDispatchToProps = (dispatch) => ({
-  sectionCreate: (data) => dispatch(section.create(data)),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Landing)
+export default connect()(Landing)

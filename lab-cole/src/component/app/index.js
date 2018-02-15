@@ -1,11 +1,9 @@
-import './_app.scss'
 import React from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
-
 import Landing from '../landing'
 
 class App extends React.Component {
-  render(){
+  render() {
     return (
       <div className='app'>
         <BrowserRouter>

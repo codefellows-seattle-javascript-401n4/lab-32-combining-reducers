@@ -1,7 +1,7 @@
 {
   "name": "lab-cole",
   "version": "1.0.0",
-  "description": "combining-reducers",
+  "description": "redux",
   "main": "index.js",
   "scripts": {
     "watch": "webpack-dev-server --inline --hot",

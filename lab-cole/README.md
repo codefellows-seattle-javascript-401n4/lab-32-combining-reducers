@@ -8,11 +8,7 @@ Enter in Command Line
 
 
 ## Program Issues
-* ...
-
-
-## Current Program Status
-* started over with starter code, developer code pending
+* I think I am missing something for starting the program, had issues with this ever since react and I think I may have missed a step in running our programs.
 
 
 ## Developer Installs
