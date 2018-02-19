@@ -2,6 +2,7 @@ import React from 'react';
 
 let emptyState = {
   name: '',
+  budegt: 0,
 };
 
 class CategoryForm extends React.Component {
@@ -33,18 +34,29 @@ class CategoryForm extends React.Component {
   render(){
     let button = this.props.category ? 'update category' : 'create category';
     return (
-      <form className="category-form" onSubmit={this.handleSubmit}>
-        <label>Name:
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter a Name"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
-        </label>
-        <button type="submit">{button}</button>
-      </form>
+      <div>
+        <form className="category-form" onSubmit={this.handleSubmit}>
+          <label>Name:
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter a Name"
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
+          </label>
+          <label>Budget:
+            <input
+              type="number"
+              name="budget"
+              placeholder="Enter an Amount"
+              value={this.state.budget}
+              onChange={this.handleChange}
+            />
+          </label>
+          <button type="submit">{button}</button>
+        </form>
+      </div>
     )
   }
 }

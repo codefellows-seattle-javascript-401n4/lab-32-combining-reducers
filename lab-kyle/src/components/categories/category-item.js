@@ -8,11 +8,10 @@ class CategoryItem extends React.Component {
   }
   render(){
     return (
-      <div className="category">
-        <header>
-          <CategoryForm onComplete={this.props.categoryUpdate} category={this.props.category} />
-          <a href="#" onClick={()=>this.props.categoryDelete(this.props.category.id)}>X</a>
-        </header>
+      <div className="category-item">
+        <h3>{this.props.category.name}</h3>
+        <button onClick={()=>this.props.categoryDelete(this.props.category.id)>X</button>
+        <CategoryForm onComplete={this.props.categoryUpdate} category={this.props.category} />
       </div>
     )
   }
